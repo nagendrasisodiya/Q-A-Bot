@@ -20,3 +20,5 @@ venv/
 
 # 6. Poetry (optional)
 poetry.lock
+#7. configuration file
+/config.py
