@@ -8,7 +8,7 @@ __pycache__/
 venv/
 
 # 3. Secrets
-LLM/.env
+**/.env
 .gradio/
 
 # 4. IDE
