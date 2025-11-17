@@ -1,7 +1,13 @@
-from ibm_watsonx_ai.foundation_models import ModelInference
+import os
+
 from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
-from ibm_watsonx_ai import Credentials
 from langchain_ibm import WatsonxLLM
+from dotenv import load_dotenv
+
+
+load_dotenv()
+api_key=os.getenv("WATSONX_API_KEY")
+print("Loaded API key:", api_key is not None)
 
 model_id='ibm/granite-3-3-8b-instruct'
 parameters={
@@ -14,8 +20,9 @@ watsonx_llm = WatsonxLLM(
     model_id=model_id,
     url="https://eu-de.ml.cloud.ibm.com",
     project_id=project_id,
+    api_key=api_key,
     params=parameters,
-    apikey=
+
 )
 
 query=input("Enter your query testing query: ")
