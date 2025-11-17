@@ -1,0 +1,24 @@
+[project]
+name = "gradio-qabot"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "nagendrasisodiya",email = "3n3singh@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "gradio (>=5.49.1,<6.0.0)",
+    "ibm-watsonx-ai (>=1.4.6,<2.0.0)",
+    "langchain (>=1.0.7,<2.0.0)",
+    "langchain-community (>=0.4.1,<0.5.0)",
+    "langchain-ibm (>=1.0.1,<2.0.0)",
+    "chromadb (>=1.3.4,<2.0.0)",
+    "pypdf (>=6.3.0,<7.0.0)",
+    "pydantic (<2.12)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
