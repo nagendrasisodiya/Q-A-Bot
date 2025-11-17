@@ -1,0 +1,28 @@
+Gradio Interface Inputs and Outputs
+Common Inputs
+Gradio has a large number of input types. The more commonly encountered ones are listed below:
+
+Checkbox: A checkbox that can be set to True or False.
+CheckboxGroup: An input type that allows users to select multiple values from a predefined checkbox list.
+Dropdown: An input type that provides a dropdown list where, by default,
+one value can be selected. If multiselect is set to True, then one or more values can be selected.
+File: An input type that allows a user to upload a file.
+Image: An input type that allows the user to select or upload an image.
+Radio: An input type that forces the user to choose one value.
+Slider: An input type that provides a slider where a value must be selected between a minimum and a maximum range.
+The value parameter defines the default value, and step provides the increment value.
+Setting the minimum, maximum, and step values to integers will select integer values.
+Textbox: An expandible text box that allows the user to type in text.
+
+
+
+Common Outputs
+Many of Gradio's input types can also function as outputs.
+The available output types depend on the output of the function provided to Interface.
+In practice, for most LLM applications, the output type is typically text.
+As such, a suitable choice is either gr.Textbox(), or just "text", which offers an expandable text box.
+
+Another frequently encountered output type is Label.
+Label is typically used for classification tasks, and can output the predicted probabilities of each class.
+If you have a large number of classes, you can use the num_top_classes parameter to control the number of classes that are outputted.
+For instance, if you have 1000 classes, setting Label(num_top_classes=3) would output just the three classes with the highest predicted probabilities instead of the predicted probabilities for all classes.
