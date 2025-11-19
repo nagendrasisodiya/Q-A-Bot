@@ -7,7 +7,7 @@ def sentence_builder(quantity, tech_worker_type, countries, place, activity_list
 demo = gr.Interface(
     fn=sentence_builder,
     inputs=[
-        gr.Slider(4, 20, value=4, step=1, label="Count", info="Choose between 3 and 20"),
+        gr.Slider(3, 20, value=4, step=1, label="Count", info="Choose between 3 and 20"),
         gr.Dropdown(
             ["Data Scientist", "Software Developer", "Software Engineer"],
             label="tech_worker_type",
@@ -24,7 +24,7 @@ demo = gr.Interface(
         ),
         gr.Checkbox(label="Morning", info="Did they do it in the morning?"),
     ],
-    outputs="text",
+    outputs=gr.Textbox(label="Output", lines=10),
     title="A sentence builder",
     examples=[
         [3, "Software Developer", ["Canada", "Japan"], "restaurant", ["coded", "fixed bugs"], True],
